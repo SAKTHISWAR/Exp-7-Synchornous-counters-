@@ -92,7 +92,7 @@ endmodule
 
 ### DOWN COUNTER:
 
-module exp6b(clk,A);
+module dCounters(clk,A);
 input clk;
 output reg [3:0]A;
 always@(posedge clk)
@@ -100,7 +100,7 @@ begin
 	A[3]=(((~A[0])&(~A[1])&(~A[2]))^A[3]);
 	A[2]=(((~A[0])&(~A[1]))^A[2]);
 	A[1]=(~A[0])^A[1];
-	A[0]=(~A[0])^1;
+	A[0]=1^A[0];----- correct
 end
 endmodule
 
